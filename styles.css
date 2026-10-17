@@ -55,21 +55,20 @@ dialog{background:#e0e8d5}
 
 /* Full-width video hero: the message sits directly over the film. */
 .hero.hero-video-background{display:flex;flex-direction:column;justify-content:center;align-items:center;isolation:isolate;overflow:hidden;max-width:none;min-height:760px;min-height:clamp(720px,100svh,1000px);min-height:clamp(720px,100dvh,1000px);padding:95px 6% 115px;background:#1c3529;color:#f4f7ee;text-align:center}
-.hero-floating-header{position:absolute;top:22px;left:0;right:0;z-index:10;padding:0 5.5%;pointer-events:none}
-.floating-header-inner{max-width:1160px;margin:0 auto;pointer-events:auto;display:flex;align-items:center;justify-content:space-between;gap:18px;background:rgba(18,40,29,0.55);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(213,227,188,0.28);border-radius:999px;padding:9px 20px;box-shadow:0 10px 30px rgba(0,0,0,0.35);color:#f4f7ee}
-.hamburger-btn{display:none;background:rgba(255,255,255,0.08);border:1px solid rgba(213,227,188,0.32);border-radius:999px;color:#f4f7ee;padding:7px 14px;align-items:center;gap:8px;font-size:12px;font-weight:700;cursor:pointer;transition:background .2s,border-color .2s}
-.hamburger-btn:hover{background:rgba(255,255,255,0.16);border-color:rgba(213,227,188,0.5)}
-.hamburger-lines{display:flex;flex-direction:column;justify-content:space-between;width:15px;height:11px}
+.hero-floating-header{position:absolute;top:24px;left:0;right:0;z-index:10;padding:0 5.5%;pointer-events:none}
+.floating-header-inner{max-width:1200px;margin:0 auto;pointer-events:none;display:flex;align-items:center;justify-content:space-between;background:transparent;border:none;box-shadow:none;padding:0}
+.hamburger-btn{pointer-events:auto;display:inline-flex;align-items:center;gap:10px;background:rgba(18,40,29,0.65);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(213,227,188,0.32);border-radius:999px;color:#f4f7ee;padding:10px 18px;font-size:13px;font-weight:700;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,0.32);transition:background .2s ease,border-color .2s ease,transform .2s ease,box-shadow .2s ease}
+.hamburger-btn:hover{background:rgba(26,56,41,0.85);border-color:rgba(213,227,188,0.55);transform:translateY(-1px);box-shadow:0 10px 28px rgba(0,0,0,0.4)}
+.hamburger-btn:focus-visible{outline:2px solid #e0efbc;outline-offset:2px}
+.hamburger-lines{display:flex;flex-direction:column;justify-content:space-between;width:16px;height:12px}
 .hamburger-lines span{display:block;width:100%;height:2px;background:#cbdcaf;border-radius:2px}
-.floating-wordmark{font-family:Heebo,Arial,sans-serif;font-size:20px;font-weight:900;letter-spacing:-0.8px;display:flex;align-items:center;color:#f4f7ee}
-.floating-wordmark span{font-weight:400;margin-right:4px}
-.floating-wordmark i{font-size:22px;font-style:normal;margin-right:7px;color:#cbdcaf}
-.floating-nav{display:flex;align-items:center;gap:26px;font-size:14px}
-.floating-nav a{color:#dce5cf;transition:color .15s ease;white-space:nowrap}
-.floating-nav a:hover{color:#fff}
-.floating-cta{background:#d5e3bc;color:#1c3529;font-weight:700;font-size:13px;padding:8px 18px;border-radius:999px;display:inline-flex;align-items:center;gap:10px;white-space:nowrap;transition:background .2s ease,transform .2s ease}
-.floating-cta:hover{background:#e7f0d7;transform:translateY(-1px)}
+.hamburger-label{font-size:13px;letter-spacing:0.3px}
+.floating-cta{pointer-events:auto;background:#d5e3bc;color:#1c3529;font-weight:700;font-size:13px;padding:10px 20px;border-radius:999px;display:inline-flex;align-items:center;gap:8px;white-space:nowrap;box-shadow:0 8px 24px rgba(0,0,0,0.32);text-decoration:none;transition:background .2s ease,transform .2s ease,box-shadow .2s ease}
+.floating-cta:hover{background:#e7f0d7;transform:translateY(-1px);box-shadow:0 10px 28px rgba(0,0,0,0.4)}
+.floating-cta:focus-visible{outline:2px solid #e0efbc;outline-offset:2px}
 .floating-cta span{font-size:15px;line-height:1}
+dialog:modal{overscroll-behavior:contain}
+dialog::backdrop{overflow:hidden;overscroll-behavior:contain}
 .mobile-nav-dialog{border:1px solid rgba(213,227,188,0.3);background:#173326;color:#f4f7ee;border-radius:22px;padding:0;max-width:380px;width:calc(100% - 32px);box-shadow:0 25px 60px rgba(0,0,0,0.65);margin:auto}
 .mobile-nav-dialog::backdrop{background:rgba(10,24,18,0.7);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
 .mobile-nav-content{padding:22px;display:flex;flex-direction:column;gap:18px}
@@ -103,18 +102,19 @@ dialog{background:#e0e8d5}
 .hero-video-controls button:hover{background:#35543dcc}
 .hero-video-background a:focus-visible,.hero-video-controls button:focus-visible{outline-color:#e0efbc}
 @media(max-width:800px){
- .floating-wordmark, .floating-nav{display:none}
- .hamburger-btn{display:inline-flex}
- .hero-floating-header{top:14px;padding:0 4%}
- .floating-header-inner{padding:8px 14px;justify-content:space-between}
- .floating-cta{padding:7px 14px;font-size:12px;gap:8px}
+ .hero-floating-header{top:16px;padding:0 4%}
+ .hamburger-btn{padding:8px 15px;font-size:12px;gap:8px}
+ .hamburger-lines{width:15px;height:11px}
+ .hamburger-label{font-size:12px}
+ .floating-cta{padding:8px 16px;font-size:12px;gap:7px}
 }
 @media(max-width:650px){
  .hero.hero-video-background{min-height:760px;min-height:max(730px,100svh);min-height:max(730px,100dvh);padding:82px 5% 125px}
- .hero-floating-header{top:12px;padding:0 3%}
- .floating-header-inner{padding:6px 12px;justify-content:space-between}
- .hamburger-btn{padding:6px 12px;font-size:11px;gap:6px}
- .floating-cta{padding:6px 12px;font-size:11px;gap:6px}
+ .hero-floating-header{top:12px;padding:0 3.5%}
+ .hamburger-btn{padding:7px 13px;font-size:11px;gap:6px}
+ .hamburger-lines{width:14px;height:10px}
+ .hamburger-label{font-size:11px}
+ .floating-cta{padding:7px 13px;font-size:11px;gap:6px}
  .floating-cta span{font-size:13px}
  .hero-video-background .hero-copy{display:block}
  .hero-video-background .eyebrow{font-size:9px}
