@@ -48,7 +48,38 @@
   }
   document.querySelector('#year').textContent = new Date().getFullYear();
   const dialog = document.querySelector('#credits');
-  document.querySelector('#credits-button').addEventListener('click', () => dialog.showModal());
-  dialog.querySelector('button').addEventListener('click', () => dialog.close());
-  dialog.addEventListener('click', e => { if (e.target === dialog) { const r = dialog.getBoundingClientRect(); if(e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) dialog.close(); } });
+  if (dialog) {
+    const creditsBtn = document.querySelector('#credits-button');
+    if (creditsBtn) creditsBtn.addEventListener('click', () => dialog.showModal());
+    const closeBtn = dialog.querySelector('button');
+    if (closeBtn) closeBtn.addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', e => { if (e.target === dialog) { const r = dialog.getBoundingClientRect(); if(e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) dialog.close(); } });
+  }
+  const mobileNav = document.querySelector('#mobile-nav');
+  const menuToggle = document.querySelector('#menu-toggle');
+  const menuClose = document.querySelector('#menu-close');
+  if (mobileNav && menuToggle) {
+    const openMenu = () => {
+      mobileNav.showModal();
+      menuToggle.setAttribute('aria-expanded', 'true');
+    };
+    const closeMenu = () => {
+      mobileNav.close();
+      menuToggle.setAttribute('aria-expanded', 'false');
+    };
+    menuToggle.addEventListener('click', openMenu);
+    if (menuClose) menuClose.addEventListener('click', closeMenu);
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+    mobileNav.addEventListener('click', e => {
+      if (e.target === mobileNav) {
+        const r = mobileNav.getBoundingClientRect();
+        if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) closeMenu();
+      }
+    });
+    mobileNav.addEventListener('close', () => {
+      menuToggle.setAttribute('aria-expanded', 'false');
+    });
+  }
 })();

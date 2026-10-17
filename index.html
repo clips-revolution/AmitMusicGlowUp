@@ -68,10 +68,31 @@
 <div class="hero-backdrop" aria-hidden="true"><video id="hero-video" muted loop playsinline preload="metadata" poster="assets/amit-video-poster.jpg" width="1080" height="1920" tabindex="-1"><source src="assets/amit-glow-up.mp4" type="video/mp4"></video></div>
 <header class="hero-floating-header">
 <div class="floating-header-inner">
+<button class="hamburger-btn" id="menu-toggle" type="button" aria-label="פתיחת תפריט ניווט" aria-expanded="false" aria-controls="mobile-nav">
+<span class="hamburger-lines" aria-hidden="true"><span></span><span></span><span></span></span>
+<span class="hamburger-label">תפריט</span>
+</button>
 <a class="floating-wordmark" href="#" aria-label="עמית בן דוד — עמוד הבית" dir="rtl">עמית <span>בן דוד</span><i>✳</i></a>
 <nav class="floating-nav" aria-label="ניווט ראשי"><a href="#about">נעים להכיר</a><a href="#glow">GLOW UP</a><a href="#program">מה בכנס?</a></nav>
 <a class="floating-cta" href="#tickets" data-ticket-link>להרשמה <span>↖</span></a>
 </div>
+<dialog id="mobile-nav" class="mobile-nav-dialog" aria-label="תפריט ניווט">
+<div class="mobile-nav-content">
+<div class="mobile-nav-top">
+<span class="wordmark" dir="rtl">עמית <span>בן דוד</span><i>✳</i></span>
+<button class="mobile-nav-close" id="menu-close" type="button" aria-label="סגירת תפריט">×</button>
+</div>
+<nav class="mobile-nav-list" aria-label="קישורי עמוד">
+<a href="#about">נעים להכיר <span>←</span></a>
+<a href="#glow">GLOW UP — האירוע <span>←</span></a>
+<a href="#story">הגלואפ שלי (לפני ואחרי) <span>←</span></a>
+<a href="#moments">רגעים מהפרק החדש <span>←</span></a>
+<a href="#program">מה מחכה לך בכנס? <span>←</span></a>
+<a href="#world">עוד מעמית ברשתות <span>←</span></a>
+<a href="#tickets" class="button mobile-dialog-cta" data-ticket-link>להרשמה לכנס <span>↖</span></a>
+</nav>
+</div>
+</dialog>
 </header>
 <div class="hero-copy">
 <p class="eyebrow"><span class="dot"></span> AMIT BEN DAVID PRESENTS</p>
