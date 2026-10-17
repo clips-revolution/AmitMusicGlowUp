@@ -96,10 +96,12 @@ dialog::backdrop{overflow:hidden;overscroll-behavior:contain}
 .hero-video-background .button:hover{background:#e7f0d7}
 .hero-video-background .text-link{color:#f4f7ee;font-size:13px}
 .hero-video-background .coming{color:#d9e4ce;font-size:11px;margin-top:22px}
-.hero-video-background .hero-bottom{position:absolute;bottom:65px;left:6%;right:6%;padding:0;color:#d5dfcb;font-size:9px}
-.hero-video-controls{position:absolute;bottom:20px;left:6%;display:flex;gap:9px;direction:rtl}
-.hero-video-controls button{border:1px solid #c7d7ba80;border-radius:30px;background:#17342288;backdrop-filter:blur(8px);color:#f4f7ee;padding:8px 14px;font-size:11px;line-height:1.5}
-.hero-video-controls button:hover{background:#35543dcc}
+.hero-video-background .hero-bottom{position:absolute;bottom:clamp(20px,2.5vw,32px);left:0;right:0;display:flex;justify-content:center;align-items:center;padding:0;pointer-events:none;z-index:5}
+.hero-scroll-link{pointer-events:auto;color:#d5dfcb;font-size:11px;letter-spacing:0.5px;transition:color .2s ease,transform .2s ease}
+.hero-scroll-link:hover{color:#fff;transform:translateY(2px)}
+.hero-video-controls{position:absolute;bottom:clamp(16px,2.5vw,26px);left:clamp(14px,3.5vw,48px);display:flex;gap:9px;direction:rtl;z-index:5}
+.hero-video-controls button{border:1px solid rgba(199,215,186,0.45);border-radius:30px;background:rgba(23,52,34,0.65);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:#f4f7ee;padding:9px 16px;font-size:11px;font-weight:600;line-height:1.5;box-shadow:0 4px 16px rgba(0,0,0,0.25);transition:background .2s ease,border-color .2s ease,transform .2s ease}
+.hero-video-controls button:hover{background:rgba(43,76,54,0.85);border-color:rgba(213,227,188,0.65);transform:translateY(-1px)}
 .hero-video-background a:focus-visible,.hero-video-controls button:focus-visible{outline-color:#e0efbc}
 @media(max-width:800px){
  .hero-floating-header{top:16px;padding:0 4%}
@@ -138,8 +140,9 @@ dialog::backdrop{overflow:hidden;overscroll-behavior:contain}
  .hero-video-background h2{font-size:29px;margin-bottom:18px}
  .hero-video-background .intro{font-size:14px}
  .hero-video-background .hero-actions .button{font-size:13px;padding:16px 24px}
- .hero-video-background .hero-bottom{bottom:75px;font-size:8px}
- .hero-video-controls{bottom:22px;left:50%;transform:translateX(-50%);white-space:nowrap}
+ .hero-video-background .hero-bottom{bottom:60px}
+ .hero-scroll-link{font-size:10px}
+ .hero-video-controls{bottom:16px;left:50%;transform:translateX(-50%);white-space:nowrap}
  .hero-backdrop video{object-position:center center}
 }
 
